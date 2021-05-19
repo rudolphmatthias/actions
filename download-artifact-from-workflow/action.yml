@@ -1,0 +1,22 @@
+name: 'Download the artifacts of a specified workflow run'
+description: 'Downloads the artifacts of the given workflow run.'
+inputs:
+  workflow-run-id:
+    description: 'The id of the workflow run. There is an environment variable provided by your workflow --> github.run_id, see https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context'
+    required: true
+  artifact-name:
+    description: 'The name of the artifact to be downloaded.'
+    required: false
+  path:
+    description: 'The path where the artifacts shall be stored to.'
+    required: false
+  archive-format:
+    description: 'The archive format to be downloaded.'
+    required: false
+    default: zip
+  github-token: 
+    description: 'The github token to use for downloading the artifact.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

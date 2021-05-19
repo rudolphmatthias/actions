@@ -103,6 +103,16 @@ jobs:
       - name: Package
         run: npm run package
       - name: Run Action
-        uses: ./
+        uses: ./semantic-version
         id: run
-
+  download-artifact-from-workflow:
+    name: Run local download artifact
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download Artifact
+        uses: ./download-artifact-from-workflow
+        with:
+          workflow-run-id: ${{ github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
