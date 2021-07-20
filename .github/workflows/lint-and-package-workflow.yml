@@ -23,7 +23,8 @@ jobs:
             "configure-aws-credentials",
             "json-property",
             "create-workflow-dispatch",
-            "semantic-version"
+            "semantic-version",
+            "conventional-commits-parser"
           ]
     steps:
       - name: Checkout

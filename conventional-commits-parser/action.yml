@@ -1,0 +1,6 @@
+name: 'Check conventional commit'
+description: 'Checks if the last commit complies the conventional commit see https://www.conventionalcommits.org/en/v1.0.0/'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

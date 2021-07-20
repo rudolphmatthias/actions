@@ -105,4 +105,12 @@ jobs:
       - name: Run Action
         uses: ./
         id: run
+  conventional-commits-parser:
+    name: Run conventional-commits-parser
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Local Action
+        uses: ./conventional-commits-parser
 
